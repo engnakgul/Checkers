@@ -1,15 +1,23 @@
-# Analysis Endpoints
+---
+layout: default
+title: "Analysis API"
+---
+
+
+# Analysis API
 
 ### Get Analysis By Id
 
-* URL: /api/get-analysis-by-id/:id
-* Method: Get
-* Description: Retrieves an analysis by its Id
-* URL Parameters:
+**URL**: /api/get-analysis-by-id/:id
+**Method**: Get
+**Description**: Retrieves an analysis by its Id
+**URL Parameters**:
     * id (integer): The unique ID of the activation to retrieve
 
-* Query parameters: None
-* Request Body: None
+* Example Request:
+   ```bash
+   GET /api/analysis/get-analysis-by-id/1
+   ```
 * Response
     * 200 Ok: Analysis Retrieved successfully
         * Body: A JSON object containing the activation details
