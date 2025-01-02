@@ -6,7 +6,7 @@ title: "Analysis API"
 
 # Analysis API
 
-### Get Analysis By Id
+## Get Analysis By Id
 
 * URL: /api/get-analysis-by-id/:id
 * Method: Get
@@ -40,7 +40,7 @@ title: "Analysis API"
           ```
 
 
-### Get All Analysis 
+## Get All Analysis 
 
 * URL: /api/get-all-analysis
 * Method: Get
