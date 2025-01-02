@@ -2,7 +2,7 @@ title: My Project Documentation
 description: Documentation for my project using Jekyll
 theme: minima
 baseurl: "/api" # Eğer alt dizin kullanıyorsanız buraya alt dizin adını yazın
-url: "https://github.com/engnakgul/Checkers"
+url: "https://engnakgul.github.io/Checkers/"
 
 
 navbar: 
