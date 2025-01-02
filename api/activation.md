@@ -8,18 +8,19 @@
 * URL Parameters:
     * id (integer): The unique ID of the activation to retrieve
 
-* Query parameters: None
-* Request Body: None
+  ```bash
+  GET /api/get-activation-by-id/1
+  ```
 * Response
     * 200 Ok: Activation Retrieved successfully
         * Body: A JSON object containing the activation details
         * Example Response:
           ```json
           {
-          "id": 123,
-          "name": "Sample Activation",
-          "status": "active",
-          "createdAt": "2025-01-01T00:00:00Z"
+          "id": 1,
+          "mt5ID": "test mt5 id",
+          "mt5Value": "test mt5 value",
+          "mt5Description": "test description"
           }
           ```
     * 400 Bad REquest: ID not found.
