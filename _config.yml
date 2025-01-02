@@ -12,7 +12,5 @@ navbar:
   - title: "Activation"
     url: "/api/activation"
   - title: "Analysis"
-    url: "/api/activation"
-  - title: "apiKey"
-    url: "/api/activation"
+    url: "/api/Analysis"
   
