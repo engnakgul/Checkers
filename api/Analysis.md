@@ -8,10 +8,10 @@ title: "Analysis API"
 
 ### Get Analysis By Id
 
-**URL**: /api/get-analysis-by-id/:id
-**Method**: Get
-**Description**: Retrieves an analysis by its Id
-**URL Parameters**:
+* URL: /api/get-analysis-by-id/:id
+* Method: Get
+* Description: Retrieves an analysis by its Id
+* URL Parameters:
     * id (integer): The unique ID of the activation to retrieve
 
 * Example Request:
