@@ -16,7 +16,7 @@ title: "Analysis API"
 
 * Example Request:
    ```bash
-   GET /api/analysis/get-analysis-by-id/1
+   GET /api/get-analysis-by-id/1
    ```
 * Response
     * 200 Ok: Analysis Retrieved successfully
