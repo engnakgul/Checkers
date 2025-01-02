@@ -33,8 +33,50 @@ title: "Analysis API"
           "contentImage": "test content"
           }
           ```
-    * 400 Bad REquest: ID not found.
+    * 400 Bad Request: ID not found.
         * Body:
           ```json
           {"message": "ID not found."}
+          ```
 
+
+### Get All Analysis 
+
+* URL: /api/get-all-analysis
+* Method: Get
+* Description: Retrieves a list of all analyses.
+* Example Request:
+   ```bash
+   GET /api/get-all-analysis
+   ```
+* Response
+    * 200 Ok: Successfully retrieved the list of analyses.
+        * Body: An array of JSON objects, each representing an analysis.
+        * Example Response:
+          ```json
+          [
+           {
+          "id": 1,
+          "title": "Analysis 1",
+          "description": "Description for analysis 1",
+          "content": "Content for analysis 1",
+          "analysisType": "basic",
+          "coverImage": "image1.jpg",
+          "contentImage": "content1.jpg"
+          },
+          {
+             "id": 2,
+             "title": "Analysis 2",
+             "description": "Description for analysis 2",
+             "content": "Content for analysis 2",
+             "analysisType": "advanced",
+             "coverImage": "image2.jpg",
+             "contentImage": "content2.jpg"
+           }]
+         ```
+         
+    * 400 Bad Request: No data found.
+        * Body:
+          ```json
+          {"message": "No data found."}
+          ```
