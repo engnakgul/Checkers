@@ -1,0 +1,10 @@
+title: "Oyun Kuralları"
+description: "Bu dökümantasyon projenizin kullanımını ve yapılandırılmasını anlatmaktadır."
+theme: jekyll-theme-minimal
+
+# Menüler
+navbar:
+  - title: "Ana Sayfa"
+    link: "/"
+  - title: "Kurulum"
+    link: "/installation"
