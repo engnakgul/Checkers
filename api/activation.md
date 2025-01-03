@@ -18,29 +18,28 @@
   ```bash
   GET /api/get-activation-by-id/1
   ```
-  ```json
-  {
-  "id": 1,
-  "mt5ID": "12345678",
-  "mt5Value": 1500,
-  "mt5Description": "test description"
-  }
-  ```
+  
   
 * Response
     * 200 Ok: Activation Retrieved successfully
         * Body: A JSON object containing the activation details
         * Example Response:
           ```json
-          {
-          "status": "success",
-          "message": "Activation Retrieved successfully"
-          }
-          ```
+           {
+           "id": 1,
+           "mt5ID": "12345678",
+           "mt5Value": 1500,
+           "mt5Description": "test description"
+           }
+           ```
     * 400 Bad Request: ID not found.
         * Body:
           ```json
-          {"message": "ID not found."}
+          {
+          "status": "Failed",
+          "message": "ID not found."
+          }
+          ```
 
 
 
@@ -53,37 +52,35 @@
    ```bash
    GET /api/get-all-activations
    ```
-   ```json
-   [
-   {
-   "id": 1,
-   "mt5ID": "123456",
-   "mt5Value": 1400,
-   "mt5Description": "test description"
-   },
-   {
-   "id": 2,
-   "mt5ID": "12345678",
-   "mt5Value": 1500,
-   "mt5Description": "test description 2"
-   }
-   ]
-   ```
+  
 * Response
     * 200 Ok: Successfully retrieved the list of activations.
         * Body: An array of JSON objects, each representing an activations.
         * Example Response:
-          ```json
-          {
-          "status": "success",
-          "message": "Successfully retrieved the list of activations"
-          }
-          ```
+           ```json
+               [
+               {
+               "id": 1,
+               "mt5ID": "123456",
+               "mt5Value": 1400,
+               "mt5Description": "test description"
+               },
+               {
+               "id": 2,
+               "mt5ID": "12345678",
+               "mt5Value": 1500,
+               "mt5Description": "test description 2"
+               }
+               ]
+           ```
          
     * 400 Bad Request: No data found.
         * Body:
           ```json
-          {"message": "No data found."}
+          {
+          "status": "Failed",
+          "message": "No data found."
+          }
           ```
 
 
@@ -98,7 +95,6 @@
    ```
    ```json
    {
-   "id": 1,
    "mt5ID": "12345678",
    "mt5Value": 1500,
    "mt5Description": "test description"
@@ -111,13 +107,20 @@
              ```json
              {
              "status": "success",
-             "message": "Activation created successfully."
+             "message": "Activation created successfully.",
+             "data":{
+                "id":1,
+                "mt5ID": "12345678",
+                "mt5Value": 1500,
+                "mt5Description": "test description"
              }
+             }
+             ```
     * 400 Bad Request: Failed to create activation.
         * Body:
           ```json
           {
-          "status": "Failed"
+          "status": "Failed",
           "message": "Failed to create activation."
           }
           ```
@@ -131,11 +134,10 @@
 * Description: Retrieves a list of all activations.
 * Example Request:
    ```bash
-   GET /api/update-activation/1
+   PUT /api/update-activation/1
    ```
    ```json
    {
-   "id": 1,
    "mt5ID": "12345678",
    "mt5Value": 1500,
    "mt5Description": "test description updated"
@@ -147,14 +149,22 @@
           ```json
           {
           "status": "success",
-          "message": "Activation updated successfully."
+          "message": "Activation updated successfully.",
+          "data": {
+          "mt5ID": "12345678",
+          "mt5Value": 1500,
+          "mt5Description": "test description updated"
+           }
           }
           ```
          
     * 400 Bad Request: Activation not found.
         * Body:
           ```json
-          {"message": "Activation not found."}
+          {
+          "status": "Failed.",
+          "message": "Activation not found.",
+          }
           ```
 
 
@@ -165,15 +175,7 @@
 * Description: Retrieves a list of all activations.
 * Example Request:
    ```bash
-   GET /api/delete-activation/1
-   ```
-   ```JSON
-   {
-   "id": 1,
-   "mt5ID": "12345678",
-   "mt5Value": 1500,
-   "mt5Description": "test description"
-   }
+   DELETE /api/delete-activation/1
    ```
    
 * Response
