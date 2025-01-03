@@ -1,7 +1,6 @@
-
 ---
 layout: default
-title: "Analysis API"
+title: "Activation API"
 subtitle:
   - "Get Activation By Id"
   - "Get All Activation"
@@ -12,7 +11,8 @@ subtitle:
 
 
 
-# Activation Endpoints
+
+# Activation API
 
 * Parameters:
    - **id**:                (number) Unique identifier for the resource. [Primary Key, Auto-generated]
