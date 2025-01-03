@@ -1,3 +1,17 @@
+
+---
+layout: default
+title: "Analysis API"
+subtitle:
+  - "Get Activation By Id"
+  - "Get All Activation"
+  - "Create Activation"
+  - "Update Activation"
+  - "Delete Activation"
+---
+
+
+
 # Activation Endpoints
 
 * Parameters:
@@ -151,9 +165,9 @@
           "status": "success",
           "message": "Activation updated successfully.",
           "data": {
-          "mt5ID": "12345678",
-          "mt5Value": 1500,
-          "mt5Description": "test description updated"
+             "mt5ID": "12345678",
+             "mt5Value": 1500,
+             "mt5Description": "test description updated"
            }
           }
           ```
