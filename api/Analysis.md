@@ -70,8 +70,8 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analyses "},{"Create Analysis"}, {"
     * 200 Ok: Successfully retrieved the list of analyses.
         * Body: An array of JSON objects, each representing an analysis.
         * Example Response:
-              ```json
-               [
+             ```json
+                [
                {
                "id": 1,
                "title": "Analysis 1",
@@ -91,7 +91,7 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analyses "},{"Create Analysis"}, {"
                "contentImage": "content2.jpg"
                }
                ]
-               ```
+             ```
          
     * 400 Bad Request: No data found.
         * Body:
