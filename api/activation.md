@@ -33,10 +33,8 @@
         * Example Response:
           ```json
           {
-          "id": 1,
-          "mt5ID": "12345678",
-          "mt5Value": 1500,
-          "mt5Description": "test description"
+          "status": "success",
+          "message": "Activation Retrieved successfully"
           }
           ```
     * 400 Bad Request: ID not found.
@@ -76,20 +74,10 @@
         * Body: An array of JSON objects, each representing an activations.
         * Example Response:
           ```json
-          [
           {
-          "id": 1,
-          "mt5ID": "123456",
-          "mt5Value": 1400,
-          "mt5Description": "test description"
-          },
-          {
-          "id": 2,
-          "mt5ID": "12345678",
-          "mt5Value": 1500,
-          "mt5Description": "test description 2"
+          "status": "success",
+          "message": "Successfully retrieved the list of activations"
           }
-          ]
           ```
          
     * 400 Bad Request: No data found.
@@ -118,19 +106,20 @@
    ```
    
 * Response
-    * 200 Ok: Activation created successfully
+    * 200 Ok: Activation created successfully.
          * Example Response:
              ```json
              {
-             "id": 1,
-             "mt5ID": "12345678",
-             "mt5Value": 1500,
-             "mt5Description": "test description"
+             "status": "success",
+             "message": "Activation created successfully."
              }
     * 400 Bad Request: Failed to create activation.
         * Body:
           ```json
-          {"message": "Failed to create activation."}
+          {
+          "status": "Failed"
+          "message": "Failed to create activation."
+          }
           ```
    
 
@@ -157,10 +146,8 @@
         * Example Response:
           ```json
           {
-          "id": 1,
-          "mt5ID": "12345678",
-          "mt5Value": 1500,
-          "mt5Description": "test description updated"
+          "status": "success",
+          "message": "Activation updated successfully."
           }
           ```
          
@@ -195,6 +182,7 @@
         * Example Response:
           ```json
           {
+          "status": "success",
           "message": "Activation deleted successfully"
           }
           ```
@@ -202,5 +190,8 @@
     * 400 Bad Request: Activation not found.
         * Body:
           ```json
-          {"message": "Activation not found."}
+          {
+          "status": "Failed",
+          "message": "Failed to create activation."
+          }
           ```
