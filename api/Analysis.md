@@ -74,7 +74,7 @@ title: "Analysis API"
              "contentImage": "content2.jpg"
            }
           ]
-         ```
+          ```
          
     * 400 Bad Request: No data found.
         * Body:
