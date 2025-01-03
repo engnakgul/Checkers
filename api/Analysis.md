@@ -1,8 +1,14 @@
 ---
 layout: default
 title: "Analysis API"
-subtitle: [{"Get Analysis By Id"}, {"Get All Analyses "},{"Create Analysis"}, {"Update Analysis"}, {"Delete Analysis"}]
+subtitle:
+  - "Get Analysis By Id"
+  - "Get All Analyses"
+  - "Create Analysis"
+  - "Update Analysis"
+  - "Delete Analysis"
 ---
+
 
 
 # Analysis API
