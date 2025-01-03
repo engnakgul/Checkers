@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Analysis API"
-subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "}]
+subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"Update Analysis"}, {"Delete Analysis"}]
 ---
 
 
@@ -125,7 +125,7 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "}]
              ```
 
 
------------------------
+------------------------
 
 ## Update Analysis
 
@@ -152,28 +152,24 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "}]
              ```
    * 404 Not Found: Analysis not found.
       * Body:
-             ```json
-             {"message": "Analysis not found."}
-             ```
+         ```json
+         {"message": "Analysis not found."}
+         ```
 -------------------------------------
 ## Delete Analysis
 
 * URL: /api/delete-analysis/:id
-* Method: PUT
-* Description: Update an Analysis
+* Method: DELETE
+* Description: Delete an Analysis
 *  Example Request:
    ```bash
    POST  /api/delete-analysis/1
    ```
 * Response
-    * 200 OK: Analysis updated successfully
+    * 200 OK: Analysis deleted successfully
     * 404 Not Found: Analysis not found.
       * Body:
         ```json
         {"message": "Analysis not found."}
         ```
-
-
-        
-
 
