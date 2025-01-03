@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Analysis API"
-subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"Update Analysis"}, {"Delete Analysis"}]
+subtitle: [{"Get Analysis By Id"}, {"Get All Analyses "},{"Create Analysis"}, {"Update Analysis"}, {"Delete Analysis"}]
 ---
 
 
@@ -28,28 +28,22 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"
    ```bash
    GET /api/get-analysis-by-id/1
    ```
-   ```json
-   {
-   "id": 1,
-   "title": "Title Analysis",
-   "description": "test description",
-   "content": "test content",
-   "analysisType":"basic",
-   "coverImage":"coverImage.png",
-   "contentImage": "content.png"
-   }
-   ```
+   
 * Response
     * 200 Ok: Analysis Retrieved successfully
         * Body: A JSON object containing the activation details
         * Example Response:
              ```json
-             {
-             "statusCode": 200,
-             "status": "success",
-             "message": "Analysis Retrieved successfully"
-             }
-             ```
+            {
+            "id": 1,
+            "title": "Title Analysis",
+            "description": "test description",
+            "content": "test content",
+            "analysisType":"basic",
+            "coverImage":"coverImage.png",
+            "contentImage": "content.png"
+            }
+            ```
           
     * 400 Bad Request: ID not found.
         * Body:
@@ -62,7 +56,7 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"
           ```
 ----------------------------------
 
-## Get All Analysis 
+## Get All Analyses 
 
 * URL: /api/get-all-analysis
 * Method: GET
@@ -71,40 +65,33 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"
    ```bash
    GET /api/get-all-analysis
    ```
-   ```json
-   [
-   {
-   "id": 1,
-   "title": "Analysis 1",
-   "description": "Description for analysis 1",
-   "content": "Content for analysis 1",
-   "analysisType": "basic",
-   "coverImage": "image1.jpg", 
-   "contentImage": "content1.jpg"
-   },
-   {
-      "id": 2,
-      "title": "Analysis 2",
-      "description": "Description for analysis 2",
-      "content": "Content for analysis 2",
-      "analysisType": "advanced",
-      "coverImage": "image2.jpg",
-      "contentImage": "content2.jpg"
-    }
-   ]
-   ```
+  
 * Response
     * 200 Ok: Successfully retrieved the list of analyses.
         * Body: An array of JSON objects, each representing an analysis.
         * Example Response:
-             ```json
-             {
-             "statusCode": 200,
-             "status": "success",
-             "message": "Analysis Retrieved successfully"
-             }
-             ```
-          
+              ```json
+               [
+               {
+               "id": 1,
+               "title": "Analysis 1",
+               "description": "Description for analysis 1",
+               "content": "Content for analysis 1",
+               "analysisType": "basic",
+               "coverImage": "image1.jpg", 
+               "contentImage": "content1.jpg"
+               },
+               {
+               "id": 2,
+               "title": "Analysis 2",
+               "description": "Description for analysis 2",
+               "content": "Content for analysis 2",
+               "analysisType": "advanced",
+               "coverImage": "image2.jpg",
+               "contentImage": "content2.jpg"
+               }
+               ]
+               ```
          
     * 400 Bad Request: No data found.
         * Body:
@@ -127,7 +114,6 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"
    ```
    ```json
    {
-   "id":1,
    "title":"Test tittle",
    "description": "Test decription",
    "content": "Test content",
@@ -140,7 +126,6 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"
    * Or:
      ```json
      {
-     "id":1,
       "title":"",
       "description": "",
       "content": "Test content",
@@ -157,7 +142,16 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"
              {
              "statusCode": 200,
              "status": "success",
-             "message": "Analysis created successfully"
+             "message": "Analysis created successfully",
+             "data": {
+                "id": 1,
+                "title": "Test title",
+                "description": "Test description",
+                "content": "Test content",
+                "analysisType": "basic",
+                "coverImage": "cover.jpg",
+                "contentImage": "contentImage.jpg"
+              }
              }
              ```
 
@@ -181,11 +175,10 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"
 * Description: Update an Analysis
 *  Example Request:
    ```bash
-   POST  /api/update-analysis/1
+   PUT  /api/update-analysis/1
    ```
    ```json
    {
-   "id":1,
    "title":"Test tittle updated",
    "description": "Test decription updated",
    "content": "Test content updated",
@@ -221,17 +214,20 @@ subtitle: [{"Get Analysis By Id"}, {"Get All Analysis "},{"Create Analysis"}, {"
 * Description: Delete an Analysis
 *  Example Request:
    ```bash
-   POST  /api/delete-analysis/1
+   DELETE  /api/delete-analysis/1
    ```
+   Request body is not required for this operation.
+   
 * Response
     * 200 OK: Analysis deleted successfully
          ```json
-             {
-             "statusCode": 200,
-             "status": "success",
-             "message": "Analysis deleted successfully"
-             }
-             ```
+         {
+         "statusCode": 200,
+         "status": "success",
+         "message": "Analysis deleted successfully"
+         }
+         ```
+         
     * 404 Not Found: Analysis not found.
       * Body:
         ```json
