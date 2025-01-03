@@ -72,7 +72,8 @@ title: "Analysis API"
              "analysisType": "advanced",
              "coverImage": "image2.jpg",
              "contentImage": "content2.jpg"
-           }]
+           }
+          ]
          ```
          
     * 400 Bad Request: No data found.
